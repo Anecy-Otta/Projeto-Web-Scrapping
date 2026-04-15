@@ -7,7 +7,7 @@ import pandas as pd
 def buscar_noticias():
     url = "https://g1.globo.com/tecnologia/"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        "User-Agent": "Mozilla/5.0"
     }
 
     print(f"Acessando: {url}...")
@@ -44,7 +44,10 @@ def buscar_noticias():
     data_dir = os.path.join(os.path.dirname(__file__), "data")
     os.makedirs(data_dir, exist_ok=True)
 
-    output_path = os.path.join(data_dir, "noticias_tech.csv")
+    # Grava nome do arquivo com data e hora para evitar sobrescrever arquivos anteriores
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = os.path.join(data_dir, f"noticias_tech_{timestamp}.csv")
+
     df.to_csv(output_path, index=False, encoding="utf-8-sig")
 
     print(f"Sucesso! {len(lista_noticias)} notícias coletadas e salvas em '{output_path}'.")
