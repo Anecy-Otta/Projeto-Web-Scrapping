@@ -39,7 +39,7 @@ Coleta automatizada de notícias para análise de tendências tecnológicas.
 5. **Saída esperada:**
    - O script acessa o portal G1.
    - Coleta títulos, resumos e links das notícias.
-   - Salva os resultados em `data/noticias_tech.csv`.
+   - Salva os resultados em `data/noticias_tech_data_hora.csv`.
 
 
 ## Estrutura do projeto
@@ -58,5 +58,5 @@ Projeto Web Scrapping/
   ```bash
   pip freeze > requirements.txt
   ```
-- O script cria/atualiza automaticamente o arquivo `noticias_tech.csv` dentro da pasta `data/`.
+- O script cria/atualiza automaticamente o arquivo `noticias_tech_data_hora.csv` dentro da pasta `data/`.
 ```
